@@ -25,6 +25,12 @@ docker:
     image: centos/systemd
     image_version: latest
     privileged: True
+    volumes:
+     - /:/rootfs:ro
+     - /var/run:/var/run:rw
+     - /sys:/sys:ro
+     - /var/lib/docker/:/var/lib/docker:ro
+     - /dev/disk/:/dev/disk:ro
 
 ansible:
   group_vars:
