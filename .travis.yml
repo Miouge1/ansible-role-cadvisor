@@ -2,8 +2,10 @@
 sudo: required
 language: python
 
-services:
-  - docker
+addons:
+  apt:
+    packages:
+      - docker-ce
 
 install:
   - pip install ome-ansible-molecule-dependencies
